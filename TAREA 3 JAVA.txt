@@ -103,3 +103,59 @@ public class PuntoD {
 }
 
 ----------------------------------------------------------------------------------
+
+Punto E
+
+package TP3;
+
+import java.util.Scanner;
+
+//El codigo podria ser mas simple al calcular el promedio en el primer ciclo FOR, pero lo que entiendo es que usted queria que calculemos el promedio desde el ARRAY
+
+class Curso{
+	String nombre;
+	int nota;
+	
+	public Curso(String nombre,int nota){
+		this.nombre = nombre;
+		this.nota = nota;
+		};
+		
+	public String getNombre() {
+		return this.nombre;
+	}
+	
+	public int getNota() {
+		return this.nota;
+	}
+}
+
+
+public class PuntoE {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		float sum = 0;
+		Curso curso[] = new Curso[3];
+		String nombre_curso = " ";
+		int nota_curso = 0;
+		for (int i=0;i<3;i++) {
+			System.out.print("Ingrese el nombre del curso " + (i+1) + ":");
+			nombre_curso = sc.next();
+			System.out.print("");
+			System.out.print("Ingrese la nota del curso " + (i+1) + ":");
+			nota_curso = sc.nextInt();
+			System.out.println("");
+			curso[i] = new Curso(nombre_curso,nota_curso);
+		};
+		
+		for(int t=0;t<3;t++) {
+			sum += curso[t].getNota();
+		}
+		
+		System.out.print("El promedio de las notas de los tres cursos es: " + (sum/3));
+		
+		sc.close();
+	}
+	
+
+}
