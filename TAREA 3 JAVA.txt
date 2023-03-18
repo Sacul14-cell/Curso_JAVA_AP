@@ -1,0 +1,105 @@
+Punto A
+
+package TP3;
+
+public class PuntoA {
+	public static void main(String args[]) {
+		int arr[] = new int[] {1,2,3,4,5};
+		for (int i = 0;i<5;i++) {
+			System.out.println(arr[i]);
+		}
+	}
+
+}
+
+----------------------------------------------------------------------------------
+
+Punto B
+
+package TP3;
+
+public class PuntoB {
+	public static void main(String args[]) {
+		int arr[] = new int[] {1,2,3,4,5};
+		for (int i = 0;i<5;i++) {
+			System.out.println(arr[i]+5);
+		}
+	}
+}
+
+----------------------------------------------------------------------------------
+
+Punto C
+
+package TP3;
+
+public class PuntoC {
+	public static void main(String args[]) {
+		int arr[] = new int[] {11,26,38,144,135,677,756,887,9,101};
+		for (int i = 0;i<10;i++) {
+			System.out.println("Posicion: " + i + " --> " + arr[i]);
+		}
+		System.out.println("Posicion 6 dividida por 3: " + arr[6]/3);
+	}
+}
+
+
+----------------------------------------------------------------------------------
+
+Punto D
+
+package TP3;
+
+import java.util.Scanner;
+
+class Producto{
+	private String nombre;
+	private int precio;
+	
+	public Producto(String nombre,int precio){
+		this.nombre = nombre;
+		this.precio = precio;
+	}
+	
+	public String getNombre() {
+		return this.nombre;
+	}
+	
+	public int getPrecio() {
+		return this.precio;
+	}
+}
+
+public class PuntoD {
+	public static void main(String args[]) {
+		String nombre_producto = "";
+		int precio_producto = 0;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Ingrese el numero de productos que desea cargar: ");
+		int tam = sc.nextInt();
+		System.out.println(" ");
+		Producto tienda[] = new Producto[tam];
+		for (int i=0;i<tam;i++) {
+			System.out.println("Ingrese el nombre del producto " + (i+1) + " : ");
+			String no = sc.next();
+			System.out.println("Ingrese el precio del producto " + (i+1) + " : ");
+			int pr = sc.nextInt();
+			Producto p = new Producto(no,pr);
+			tienda[i] = p;
+		};
+		System.out.println("------------------------------------------------------------------");
+		System.out.println(" ");
+		System.out.println("TIENDA DE DEPORTES");
+		System.out.println(" ");
+		for (int t=0;t<tam;t++) {
+			nombre_producto=tienda[t].getNombre();
+			precio_producto=tienda[t].getPrecio();
+			System.out.println("Articulo " + (t+1) + ": " + nombre_producto + " ------- Precio: $" + precio_producto);
+			System.out.println(" ");
+			
+		};
+		sc.close();
+	}
+}
+
+----------------------------------------------------------------------------------
