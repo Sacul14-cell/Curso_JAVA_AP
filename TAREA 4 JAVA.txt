@@ -1,0 +1,186 @@
+**Punto A y B**
+
+import java.util.Scanner;
+
+class Usuario{
+	String nombre;
+	String apellido;
+	int edad;
+	
+	public Usuario(String nombre,String apellido,int edad){
+		this.nombre=nombre;
+		this.apellido=apellido;
+		this.edad=edad;
+	}
+	
+	public String getNombre() {
+		return this.nombre;
+	}
+	
+	public String getApellido() {
+		return this.apellido;
+	}
+	
+	public int getEdad() {
+		return this.edad;
+	}
+	
+	public void mostrarDatos() {
+		System.out.println("Nombre del usuario: " + this.nombre);
+		System.out.println("Apellido del usuario: " + this.apellido);
+		System.out.println("Edad del usuario: " + this.edad);
+	}
+	
+	public void mostrarDatosYComprobarEdad() {
+		System.out.println("Nombre del usuario: " + this.nombre);
+		System.out.println("Apellido del usuario: " + this.apellido);
+		System.out.println("Edad del usuario: " + this.edad);
+		if(edad < 18) {
+			System.out.println("El usuario es menor de edad");
+		}
+		else {
+			System.out.println("El usuario es mayor de edad");
+		}
+	}
+}
+
+
+public class PuntoAyB {
+	public static void main(String args[]) {
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Ingrese el nombre del usuario: ");
+		String a=sc.next();
+		System.out.println();
+		System.out.print("Ingrese el apellido del usuario: ");
+		String b=sc.next();
+		System.out.println();
+		System.out.print("Ingrese la edad del usuario: ");
+		int c=sc.nextInt();
+		System.out.println();
+		Usuario us = new Usuario(a,b,c);
+		us.mostrarDatos();
+		System.out.println();
+		us.mostrarDatosYComprobarEdad();
+		sc.close();
+	}
+}
+
+---------------------------------------------------------------------
+**Punto C**
+
+import java.util.Scanner;
+
+//Definicion de la clase producto
+class Producto{
+	String nombre;
+	float precio;
+	int cantidad;
+	
+	public Producto(String nombre,float precio,int cantidad) {
+		this.nombre=nombre;
+		this.precio=precio;
+		this.cantidad=cantidad;
+	}
+	
+	public String getNombre() {
+		return this.nombre;
+	}
+	
+	public float getPrecio() {
+		return this.precio;
+	}
+	
+	public int getCantidad() {
+		return this.cantidad;
+	}
+	
+}
+
+//Definicion de la clase cliente
+class Cliente{
+	String nombre;
+	String apellido;
+	int edad;
+	
+	public Cliente(String nombre,String apellido,int edad){
+		this.nombre=nombre;
+		this.apellido=apellido;
+		this.edad=edad;
+	}
+	
+	public String getNombre() {
+		return this.nombre;
+	}
+	
+	public String getApellido() {
+		return this.apellido;
+	}
+	
+	public int getEdad() {
+		return this.edad;
+	}
+	
+	public void mostrarDatos() {
+		System.out.println("Cliente: " + this.nombre + " " + this.apellido + "   Edad: " + this.edad);
+	}
+}
+
+//Clase principal
+public class PuntoC {
+	public static void main(String args[]) {
+		//Definicion de variables
+		Scanner sc=new Scanner(System.in);
+		String nombre=" ";
+		float precio=0;
+		int cantidad=0;
+		int total=0;
+		
+		//Ingreso de los datos del cliente
+		System.out.print("Ingrese el nombre del cliente: ");
+		String nom=sc.next();
+		System.out.println("");
+		System.out.print("Ingrese el apellido del cliente: ");
+		String ap=sc.next();
+		System.out.println("");
+		System.out.print("Ingrese la edad del cliente: ");
+		int ed=sc.nextInt();
+		System.out.println("");
+		Cliente cliente=new Cliente(nom,ap,ed);
+		
+		//Ingreso de los productos del carrito
+		System.out.print("Ingrese la cantidad de productos a agregar en la compra: ");
+		int num=sc.nextInt();
+		Producto carrito[]=new Producto[num];
+		for(int i=0;i<num;i++) {
+			System.out.print("Ingrese el nombre del producto " + (i+1) + ": ");
+			nombre=sc.next();
+			System.out.print("Ingrese el precio del producto " + (i+1) + ": ");
+			precio=sc.nextFloat();
+			System.out.print("Ingrese la cantidad de este producto: ");
+			cantidad=sc.nextInt();
+			Producto p = new Producto(nombre,precio,cantidad);
+			carrito[i]=p;
+		}
+		System.out.println();
+
+		//Calculo del precio total de todos los productos
+		for(int i=0;i<num;i++) {
+			total += (carrito[i].getCantidad()*carrito[i].getPrecio());
+		};
+		
+		//Visualizacion de datos
+		cliente.mostrarDatos();
+		if(total > 1000) {
+			System.out.println("Al cliente le corresponde un descuento de $" + total*0.2);
+			System.out.println("Monto total a pagar: $" + (total-total*0.2));
+		}
+		else {
+			System.out.println("Al cliente le corresponde un descuento de $0");
+			System.out.println("Monto total a pagar: $" + total);
+		}
+		
+		sc.close();
+	}
+}
+
+//Fin del programa
