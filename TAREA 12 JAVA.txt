@@ -1,0 +1,29 @@
+Carga basica
+insert into departamento(NumDepartamento,NomDepartamento,Presupuesto) values ('1','Promocion','5000'); 
+insert into departamento(NumDepartamento,NomDepartamento,Presupuesto) values ('2','RRHH','6000'); 
+insert into departamento(NumDepartamento,NomDepartamento,Presupuesto) values ('3','Logistica','750'); 
+insert into departamento(NumDepartamento,NomDepartamento,Presupuesto) values ('4','Sistemas','98500'); 
+insert into departamento(NumDepartamento,NomDepartamento,Presupuesto) values ('5','Diseño','64500'); 
+insert into departamento(NumDepartamento,NomDepartamento,Presupuesto) values ('6','Legal','5000');
+insert into empleado(DNI,Nombre,Apellido,Nacionalidad,Departamento) values ('2222222','Ramon','Perez','Arg','1');
+insert into empleado(DNI,Nombre,Apellido,Nacionalidad,Departamento) values ('3333333','Julian','Gonzalez','Arg','5');
+insert into empleado(DNI,Nombre,Apellido,Nacionalidad,Departamento) values ('4444444','Sofia','Rodriguez','Arg','6');
+insert into empleado(DNI,Nombre,Apellido,Nacionalidad,Departamento) values ('5555555','Didier','Galvez','Arg','1');
+insert into empleado(DNI,Nombre,Apellido,Nacionalidad,Departamento) values ('6666666','Elisa','Ferro','Arg','2');
+insert into empleado(DNI,Nombre,Apellido,Nacionalidad,Departamento) values ('7777777','Helena','Vargas','Arg','3');
+insert into empleado(DNI,Nombre,Apellido,Nacionalidad,Departamento) values ('8888888','Ariel','Bosques','Arg','3');
+insert into empleado(DNI,Nombre,Apellido,Nacionalidad,Departamento) values ('9999999','Orlando','Perez','Arg','3');
+insert into empleado(DNI,Nombre,Apellido,Nacionalidad,Departamento) values ('1000000','Fernanda','Rodriguez','Arg','6');
+
+
+1)
+use quatar2022;
+insert into empleado(DNI,Nombre,Apellido,Nacionalidad,Departamento) values ('11111111','Lucas','Montes','Arg','2');
+
+2) update empleado set Nacionalidad='Eng' where DNI='6666666';
+
+3) delete from departamento where NumDepartamento='4';
+
+4) select * from empleado where Departamento='3';
+
+5) select * from departamento order by NomDepartamento ASC;
