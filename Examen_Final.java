@@ -1,7 +1,46 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
-public class Insertar {
+import java.util.Scanner;
+
+class Producto{
+  int ID;
+	String nombre;
+  String descripcion;
+  String fechaVencimiento;
+  String origen;
+	int precio;
+	
+	public Producto(int ID,String nombre,String descripcion,String fechaVencimiento,String origen, int precio) {
+		this.ID=ID
+    this.nombre=nombre;
+		this.descripcion=descripcion;
+    this.fechaVencimiento;
+    this.origen=origen;
+    this.precio=precio;
+	}
+}
+
+class Cliente{
+  int DNI;
+  String nombre;
+  String apellido;
+  String domicilio;
+  int telefono;
+  
+  public Cliente(int DNI,String nombre,String apellido,String domicilio,int telefono){
+    this.DNI=DNI;
+    this.nombre=nombre;
+    this.apellido=apellido;
+    this.domicilio=domicilio;
+    this.telefono=telefono;
+  }
+}
+
+
+
+
+public class Examen_Final {
   public static void main(String[] args) {
     
     Connection conexion;
